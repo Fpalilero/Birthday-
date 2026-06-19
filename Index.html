@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Julio Birthday Surprise</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <div class="container" id="passcode-screen">
+    <h1>🎂 Julio's Surprise</h1>
+    <p>Enter the secret passcode</p>
+
+    <input type="password" id="passcode-input" placeholder="Enter passcode" maxlength="4">
+
+    <div class="keypad">
+      <button onclick="addDigit('1')">1</button>
+      <button onclick="addDigit('2')">2</button>
+      <button onclick="addDigit('3')">3</button>
+
+      <button onclick="addDigit('4')">4</button>
+      <button onclick="addDigit('5')">5</button>
+      <button onclick="addDigit('6')">6</button>
+
+      <button onclick="addDigit('7')">7</button>
+      <button onclick="addDigit('8')">8</button>
+      <button onclick="addDigit('9')">9</button>
+
+      <button onclick="deleteDigit()">⌫</button>
+      <button onclick="addDigit('0')">0</button>
+      <button onclick="checkPasscode()">✓</button>
+    </div>
+
+    <p id="error-message"></p>
+  </div>
+
+  <div class="container hidden" id="success-screen">
+    <h1>Access Granted 🎉</h1>
+    <p>Get ready for the surprise...</p>
+    <button onclick="startCountdown()">Continue</button>
+  </div>
+
+  <div class="container hidden" id="countdown-screen">
+    <h1>Loading Your Surprise 🎁</h1>
+    <h2 id="countdown">3</h2>
+  </div>
+
+  <div class="container hidden" id="birthday-screen">
+    <h1>Happy Birthday Julio! 🎉</h1>
+    <p>Before the surprise continues, here are some people who wanted to show you love.</p>
+    <button onclick="showPhotos()">View Photos</button>
+  </div>
+
+  <div class="container hidden" id="photos-screen">
+    <h1>Family & Friends 💛</h1>
+
+    <img id="memory-photo" src="images/person1.jpg" alt="Memory photo">
+
+    <h2 id="memory-name">Friend Name</h2>
+
+    <p id="memory-message">
+      Julio, you are an amazing friend and brother. We appreciate you more than you know.
+    </p>
+
+    <button onclick="nextMemory()">Next</button>
+  </div>
+
+  <div class="hidden" id="final-screen">
+
+  <div id="final-message">
+    <h1>Happy Birthday Julio 🎉</h1>
+
+    <p>
+      Julio, thank you for being a brother, a best friend, a friend,
+      and someone we can always count on.
+      No matter where life takes us all,
+      you'll always have family with us.
+    </p>
+  </div>
+
+  <div id="final-cake" class="hidden">
+  <img src="images/cake.gif" alt="Birthday Cake">
+  </div>
+
+</div>
+
+  <div class="container hidden" id="celebration-screen">
+  <h1>🎉 Happy Birthday Julio! 🎉</h1>
+
+  <p>
+    We hope you enjoyed all the memories and messages.
+    Just remember that you're loved, appreciated, and
+    have people cheering you on every day.
+  </p>
+
+  <h2>💛 Enjoy your special day! 💛</h2>
+</div>
+
+<canvas id="confetti-canvas"></canvas>
+
+  <script src="script.js"></script>
+</body>
+</html>
